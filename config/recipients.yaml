@@ -1,0 +1,18 @@
+recipients:
+  - name: "Arjun Verma"
+    email: "cxo@logistics-india.example.com"
+    role: "CXO"
+    interests: ["Strategic Impact", "Financial Risk", "Global Trade Trends"]
+    tone: "Strategic"
+  
+  - name: "Priya Sharma"
+    email: "ops@logistics-india.example.com"
+    role: "Head of Operations"
+    interests: ["Operational Efficiency", "Cost Reduction", "Tech Adoption"]
+    tone: "Operational"
+
+  - name: "Rohan Gupta"
+    email: "policy@logistics-india.example.com"
+    role: "Policy & Strategy Lead"
+    interests: ["Regulatory Compliance", "Government Initiatives", "Infrastructure Updates"]
+    tone: "Analytical"

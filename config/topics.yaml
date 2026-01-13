@@ -1,0 +1,20 @@
+topics:
+  - name: "Global Macro Radar"
+    description: "Global events shaping international trade with India impact."
+    keywords: ["Red Sea shipping", "Suez Canal blockage", "Panama Canal drought", "EU CBAM", "India export tariffs", "Freight rates India", "Container shortage"]
+  
+  - name: "Logistics Tech Lab"
+    description: "Technology trends reshaping logistics operations."
+    keywords: ["Warehouse Execution Systems", "AI in Logistics India", "Digital Twins Supply Chain", "Last Mile Automation India", "Drone delivery India"]
+
+  - name: "Government & Policy"
+    description: "Infrastructure, regulation, and policy signals in India."
+    keywords: ["PM GatiShakti", "Dedicated Freight Corridor status", "National Logistics Policy India", "Customs duty changes India", "ULIP India"]
+
+  - name: "Global Best Practices"
+    description: "What world-class logistics companies are doing differently."
+    keywords: ["Resilient supply chain case study", "Maersk strategy", "DHL innovation", "Sustainable logistics practices", "Just-in-case inventory model"]
+
+  - name: "The Logistics Talent Bench"
+    description: "People, skills, and workforce transformation."
+    keywords: ["Logistics workforce shortage India", "Supply chain upskilling", "Blue collar tech jobs India", "Warehouse management training"]

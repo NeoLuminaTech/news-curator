@@ -1,0 +1,36 @@
+name: News Curator Daily Digest
+
+on:
+  schedule:
+    # Runs at 08:00 UTC daily
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  curate-and-send:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run News Curator
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        SMTP_HOST: ${{ secrets.SMTP_HOST }}
+        SMTP_PORT: ${{ secrets.SMTP_PORT }}
+        SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+        SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        # Add other API keys if needed, e.g. SERPER_API_KEY
+      run: |
+        python main.py
