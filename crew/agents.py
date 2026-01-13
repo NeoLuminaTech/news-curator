@@ -1,5 +1,5 @@
 from crewai import Agent
-from crewai_tools import BaseTool
+from crewai.tools import BaseTool
 from services.news_fetcher import NewsFetcher
 
 # Keep the same tool
