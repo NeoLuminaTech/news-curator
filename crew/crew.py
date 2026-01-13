@@ -15,6 +15,7 @@ class NewsCuratorCrew:
         policy_agent = self.agents.infra_policy_agent()
         practice_agent = self.agents.best_practices_agent()
         talent_agent = self.agents.talent_insights_agent()
+        editor_agent = self.agents.editor_agent()
         
         # Tasks
         fetch_task = self.tasks.fetch_news_task(researcher, topics)
@@ -26,13 +27,13 @@ class NewsCuratorCrew:
         talent_task = self.tasks.analyze_talent_task(talent_agent, context=[fetch_task])
         
         compile_task = self.tasks.compile_newsletter_task(
-            researcher, 
+            editor_agent, 
             context=[macro_task, tech_task, policy_task, practice_task, talent_task],
             recipients=[] 
         )
 
         crew = Crew(
-            agents=[researcher, macro_agent, tech_agent, policy_agent, practice_agent, talent_agent],
+            agents=[researcher, macro_agent, tech_agent, policy_agent, practice_agent, talent_agent, editor_agent],
             tasks=[fetch_task, macro_task, tech_task, policy_task, practice_task, talent_task, compile_task],
             process=Process.sequential, 
             verbose=True

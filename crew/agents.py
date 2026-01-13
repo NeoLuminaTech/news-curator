@@ -26,6 +26,14 @@ class LogisticsCrewAgents:
             memory=True
         )
 
+    def editor_agent(self):
+        return Agent(
+            role='Chief Intelligence Editor',
+            goal='Compile all analysis reports into a single, cohesive Master Digest. Do NOT change the content, just structure it.',
+            backstory='You are the final gatekeeper. You take the raw intelligence from 5 desks and stitch it into one seamless brief.',
+            verbose=True
+        )
+
     def macro_impact_agent(self):
         return Agent(
             role='Global Trade Analyst (India Focus)',
@@ -68,9 +76,9 @@ class LogisticsCrewAgents:
 
     def personalization_agent(self):
         return Agent(
-            role='Personal Communication Assistant',
-            goal='Tailor news insights to the specific interests and role of a recipient.',
-            backstory='You are a personal aide who understands exactly what your focus is. You filter content to match a specific professional tone.',
+            role='Intelligence Delivery Specialist',
+            goal='Present the FULL Master Digest to the recipient with a personalized executive summary. Do NOT filter stories.',
+            backstory='You are responsible for ensuring the executive receives the complete intelligence picture. You add a warm, personalized top note, but you deliver the entire brief as-is.',
             verbose=True
         )
 

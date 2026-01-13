@@ -95,11 +95,11 @@ class LogisticsCrewTasks:
                 Their preferred tone is: {recipient['tone']}.
 
                 Using the Master Digest:
-                1. Select the stories most relevant to their interests.
-                2. Adjust the tone.
-                3. Ensure the Executive Summary at the top is personalized.
+                1. Write a personalized Executive Summary (2-3 sentences) at the top, highlighting which sections match their interests.
+                2. Then, append the COMPLETE Master Digest exactly as provided.
+                3. CRITICAL: DO NOT REMOVE ANY STORIES. The user must see the full tailored brief.
             """,
-            expected_output=f"A personalized text content for {recipient['name']}.",
+            expected_output=f"A text block containing a personalized intro followed by the full Master Digest.",
             agent=agent,
             context=context
         )
