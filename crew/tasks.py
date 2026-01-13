@@ -95,11 +95,14 @@ class LogisticsCrewTasks:
                 Their preferred tone is: {recipient['tone']}.
 
                 Using the Master Digest:
-                1. Write a personalized Executive Summary (2-3 sentences) at the top, highlighting which sections match their interests.
-                2. Then, append the COMPLETE Master Digest exactly as provided.
-                3. CRITICAL: DO NOT REMOVE ANY STORIES. The user must see the full tailored brief.
+                1. Start with "Dear {recipient['name']},".
+                2. Write a warm, slightly philosophical opening paragraph (approx 50 words) about resilience, strategy, or the current year (2025). Do NOT focus on dry business start immediately. Be human.
+                3. Follow with EXACTLY this sentence structure: "This edition offers insights on [List the 5 key headlines/topics from the digest], and [Last Topic]."
+                4. Sign off this intro section with "Hope you find this effort worthwhile."
+                5. Then, append the COMPLETE Master Digest exactly as provided.
+                6. CRITICAL: DO NOT REMOVE ANY STORIES.
             """,
-            expected_output=f"A text block containing a personalized intro followed by the full Master Digest.",
+            expected_output=f"A text block starting with Dear {recipient['name']}, followed by the philosophical intro, the topics summary, and then the full digest.",
             agent=agent,
             context=context
         )
@@ -112,11 +115,11 @@ class LogisticsCrewTasks:
                 
                 Structure:
                 - Greeting
-                - Executive Opening (2-3 lines)
-                - The 5 Sections (Keep them all, but highlight relevant ones)
+                - The Philosophical Opening & Topic List (Copy this VERBATIM from the context. Do not rewrite.)
+                - The 5 Sections (Render the Master Digest content nicely with dividers)
                 - Closing Insight
                 
-                Output ONLY the raw HTML content.
+                Output ONLY the raw HTML content. DO NOT exclude the "This edition offers insights on..." sentence.
             """,
             expected_output="A complete HTML string.",
             agent=agent,
