@@ -1,12 +1,12 @@
 recipients:
-  - name: "Arjun Verma"
-    email: "cxo@logistics-india.example.com"
+  - name: "Ravishankar"
+    email: "ravi@neolumina.in"
     role: "CXO"
     interests: ["Strategic Impact", "Financial Risk", "Global Trade Trends"]
     tone: "Strategic"
   
-  - name: "Priya Sharma"
-    email: "ops@logistics-india.example.com"
+  - name: "Venkatesh"
+    email: "venkatesh@tirwin.in"
     role: "Head of Operations"
     interests: ["Operational Efficiency", "Cost Reduction", "Tech Adoption"]
     tone: "Operational"
