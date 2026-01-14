@@ -2,6 +2,7 @@ import os
 import yaml
 import logging
 from dotenv import load_dotenv
+import datetime
 from crew.crew import NewsCuratorCrew
 from services.mailer import Mailer
 from jinja2 import Environment, FileSystemLoader
@@ -73,13 +74,15 @@ def main():
             personalized_content = str(p_result)
 
             # Render final email with Wrapper
+            today_str = datetime.datetime.now().strftime("%d-%B")
             final_email_html = render_email(template_path, {
                 'name': recipient['name'],
-                'subject': f"Logistics Intel: Critical Updates for {recipient['role']}", 
-                'body': personalized_content
+                'subject': "Tirwin Pulse | Logistics Intelligence Brief", 
+                'body': personalized_content,
+                'date': today_str
             })
             
-            subject = f"Logistics Intel: Critical Updates for {recipient['role']}"
+            subject = "Tirwin Pulse | Logistics Intelligence Brief"
             
             # Sending
             success = mailer.send_email(

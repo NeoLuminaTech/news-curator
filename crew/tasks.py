@@ -25,7 +25,7 @@ class LogisticsCrewTasks:
                    - SUMMARY: 2-3 concise bullet points.
                    - INDIA IMPACT (CRITICAL): What does this mean for Indian exporters/importers? (Mandatory)
                    - WHO SHOULD CARE: Specific roles (e.g., "Pharma Exporters", "CFOs").
-                   - URL: Source link.
+                   - URL: Source link. (CRITICAL: MUST be a valid, direct url to the article. Do not fabricate.)
                    
                 If no news is found, provide a "Nothing critical to report today" note but do not hallucinate.
             """,
