@@ -23,8 +23,10 @@ def configure_llm():
         logger.info("Attempting to connect to Gemini (gemini/gemini-1.5-flash)...")
         try:
             # Litellm format for Gemini is usually gemini/model-name
+            # We pass custom_llm_provider="gemini" explicitly to avoid "Provider NOT provided" errors
             response = completion(
                 model="gemini/gemini-1.5-flash",
+                custom_llm_provider="gemini",
                 messages=[{"role": "user", "content": "Hello"}],
                 api_key=gemini_key
             )
