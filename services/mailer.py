@@ -22,7 +22,7 @@ class Mailer:
         try:
             msg = MIMEMultipart("alternative")
             msg["Subject"] = subject
-            msg["From"] = self.smtp_user
+            msg["From"] = f"TirwinPulse <{self.smtp_user}>"
             msg["To"] = to_email
 
             if text_body:

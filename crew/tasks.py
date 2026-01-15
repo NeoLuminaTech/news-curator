@@ -24,7 +24,6 @@ class LogisticsCrewTasks:
                    - HEADLINE: Executive tone, no clickbait.
                    - SUMMARY: 2-3 concise bullet points.
                    - INDIA IMPACT (CRITICAL): What does this mean for Indian exporters/importers? (Mandatory)
-                   - WHO SHOULD CARE: Specific roles (e.g., "Pharma Exporters", "CFOs").
                    - URL: Source link. (CRITICAL: MUST be a valid, direct url to the article. Do not fabricate.)
                    
                 If no news is found, provide a "Nothing critical to report today" note but do not hallucinate.
@@ -116,7 +115,8 @@ class LogisticsCrewTasks:
                 Structure:
                 - Greeting
                 - The Philosophical Opening & Topic List (Copy this VERBATIM from the context. Do not rewrite.)
-                - The 5 Sections (Render the Master Digest content nicely with dividers)
+                - The 5 Sections (Render the Master Digest content nicely with dividers).
+                  For each story, include a "Read More" button using this HTML: <a href="[URL]" class="read-more-btn" style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: #ffffff; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 8px;">Read More</a>
                 - Closing Insight
                 
                 Output ONLY the raw HTML content. DO NOT exclude the "This edition offers insights on..." sentence.
