@@ -8,6 +8,6 @@ feedparser
 beautifulsoup4
 requests
 html2text
-litellm
+litellm[proxy]
 google-generativeai
 tiktoken
