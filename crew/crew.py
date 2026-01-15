@@ -39,8 +39,36 @@ class NewsCuratorCrew:
             verbose=True
         )
 
-        result = crew.kickoff()
-        return result
+        try:
+            result = crew.kickoff()
+            return result
+        except Exception as e:
+            import logging
+            from services.news_fetcher import NewsFetcher
+            
+            logger = logging.getLogger(__name__)
+            logger.error(f"LLM Crew Execution Failed: {e}. Initiating GNews Fallback.")
+            
+            fetcher = NewsFetcher()
+            fallback_digest = "<h3>OFFLINE MODE - GNEWS FALLBACK</h3><br>"
+            
+            try:
+                for topic in topics:
+                    fallback_digest += f"<h4>Topic: {topic}</h4><ul>"
+                    articles = fetcher.fetch_news_gnews(topic)
+                    
+                    if not articles:
+                        fallback_digest += "<li>No recent news found.</li>"
+                    
+                    for article in articles:
+                        fallback_digest += f"<li><a href='{article['url']}'>{article['title']}</a> - {article['source']} ({article['date']})<br>{article['content']}</li>"
+                    
+                    fallback_digest += "</ul><br>"
+                
+                return fallback_digest
+            except Exception as fallback_error:
+                logger.error(f"Fallback also failed: {fallback_error}")
+                return "<h2>System Offline</h2><p>Unable to generate newsletter due to multiple failures.</p>"
 
     def run_personalization_phase(self, recipient, master_digest):
         # Agents
