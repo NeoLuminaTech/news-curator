@@ -24,8 +24,9 @@ def configure_llm():
         try:
             # Litellm format for Gemini is usually gemini/model-name
             # We pass custom_llm_provider="gemini" explicitly to avoid "Provider NOT provided" errors
+            # And we MUST use the model name without prefix when provider is explicit
             response = completion(
-                model="gemini/gemini-1.5-flash",
+                model="gemini-1.5-flash",
                 custom_llm_provider="gemini",
                 messages=[{"role": "user", "content": "Hello"}],
                 api_key=gemini_key
