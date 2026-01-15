@@ -76,6 +76,9 @@ def main():
             
             # Since CrewAI kickoff returns an object, we cast to str.
             personalized_content = str(p_result)
+            
+            # Clean up markdown code blocks if present
+            personalized_content = personalized_content.replace('```html', '').replace('```', '').strip()
 
             # Render final email with Wrapper
             today_str = datetime.datetime.now().strftime("%d-%B")

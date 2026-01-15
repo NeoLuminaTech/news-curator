@@ -1,18 +1,12 @@
 recipients:
-  - name: "Ravishankar"
+  - name: "Mr.Ravishankar"
     email: "ravi@neolumina.in"
     role: "CXO"
     interests: ["Strategic Impact", "Financial Risk", "Global Trade Trends"]
     tone: "Strategic"
   
-  - name: "Venkatesh"
+  - name: "Mr.Venkatesh"
     email: "venkatesh@tirwin.in"
     role: "Head of Operations"
     interests: ["Operational Efficiency", "Cost Reduction", "Tech Adoption"]
     tone: "Operational"
-
-  - name: "Rohan Gupta"
-    email: "policy@logistics-india.example.com"
-    role: "Policy & Strategy Lead"
-    interests: ["Regulatory Compliance", "Government Initiatives", "Infrastructure Updates"]
-    tone: "Analytical"
