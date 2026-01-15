@@ -89,5 +89,11 @@ class NewsCuratorCrew:
             verbose=True
         )
 
-        result = crew.kickoff()
-        return result
+        try:
+            result = crew.kickoff()
+            return result
+        except Exception as e:
+            import logging
+            logger = logging.getLogger(__name__)
+            logger.error(f"Personalization Crew Execution Failed: {e}. Falling back to Master Digest.")
+            return master_digest

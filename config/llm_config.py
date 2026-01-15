@@ -90,5 +90,7 @@ def configure_llm():
         logger.warning("OPENROUTER_API_KEY not found.")
 
     # 4. Exit if all failed
-    logger.critical("All LLM providers failed. Exiting application.")
-    raise SystemExit("Fatal Error: Could not connect to any LLM provider.")
+    # 4. Exit if all failed -> NOW JUST LOG AND RETURN
+    logger.critical("All LLM providers failed. Continuing in OFFLINE/FALLBACK mode.")
+    # raise SystemExit("Fatal Error: Could not connect to any LLM provider.")
+    return
