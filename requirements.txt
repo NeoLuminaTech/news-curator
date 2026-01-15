@@ -8,3 +8,6 @@ feedparser
 beautifulsoup4
 requests
 html2text
+litellm
+google-generativeai
+tiktoken
