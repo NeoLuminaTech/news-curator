@@ -6,6 +6,7 @@ import datetime
 from crew.crew import NewsCuratorCrew
 from services.mailer import Mailer
 from jinja2 import Environment, FileSystemLoader
+from config.llm_config import configure_llm
 
 # Load environment variables
 load_dotenv()
@@ -28,6 +29,9 @@ def render_email(template_path, context):
 
 def main():
     logger.info("Starting Logistics Intelligence Radar...")
+    
+    # Configure LLM Provider (Fallback Logic)
+    configure_llm()
 
     # Load Configs
     topics_config = load_config('config/topics.yaml')

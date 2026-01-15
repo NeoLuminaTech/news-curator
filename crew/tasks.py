@@ -18,7 +18,7 @@ class LogisticsCrewTasks:
                 You are responsible for the '{section_name}' section of the intelligence brief.
                 
                 Using the provided raw news (from previous task context):
-                1. Select the top 1-2 most critical stories for this section.
+                1. Select the top 2 most critical stories for this section. (You MUST select exactly 2 stories. If fewer than 2 are obviously critical, include the next best relevant stories to meet the count of 2.)
                 2. {specific_instruction}
                 3. STRICT OUTPUT FORMAT for each selected story:
                    - HEADLINE: Executive tone, no clickbait.

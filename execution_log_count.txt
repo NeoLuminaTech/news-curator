@@ -1,0 +1,271 @@
+2026-01-15 11:48:39,915 - __main__ - INFO - Starting Logistics Intelligence Radar...
+2026-01-15 11:48:39,915 - config.llm_config - INFO - Attempting to connect to OpenAI (gpt-4o)...
+[92m11:48:39 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+2026-01-15 11:48:39,927 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4o; provider = openai
+2026-01-15 11:48:40,583 - openai._base_client - INFO - Retrying request to /chat/completions in 0.418377 seconds
+2026-01-15 11:48:41,590 - openai._base_client - INFO - Retrying request to /chat/completions in 0.898367 seconds
+2026-01-15 11:48:42,871 - config.llm_config - WARNING - Failed to connect to OpenAI: litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+2026-01-15 11:48:42,871 - config.llm_config - INFO - Falling back to OpenRouter (openrouter/allenai/molmo-2-8b:free)...
+[92m11:48:42 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= allenai/molmo-2-8b:free; provider = openrouter
+2026-01-15 11:48:42,877 - LiteLLM - INFO - 
+LiteLLM completion() model= allenai/molmo-2-8b:free; provider = openrouter
+[92m11:48:44 - LiteLLM:INFO[0m: utils.py:1573 - Wrapper: Completed Call, calling success_handler
+2026-01-15 11:48:44,891 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2026-01-15 11:48:44,892 - config.llm_config - INFO - Successfully connected to OpenRouter.
+2026-01-15 11:48:44,900 - __main__ - INFO - Loaded 5 mandatory sections.
+2026-01-15 11:48:44,900 - __main__ - INFO - Starting Phase 1: Global Research & Master Digest...
+/Users/ravij/AntiGravityProjects/news-curator/.venv/lib/python3.11/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+  PydanticSerializationUnexpectedValue(Expected 10 fields but got 5: Expected `Message` - serialized value may not be as expected [input_value=Message(content='Hello! H...one, 'reasoning': None}), input_type=Message])
+  PydanticSerializationUnexpectedValue(Expected `StreamingChoices` - serialized value may not be as expected [input_value=Choices(finish_reason='st...finish_reason': 'stop'}), input_type=Choices])
+  return self.__pydantic_serializer__.to_python(
+/Users/ravij/AntiGravityProjects/news-curator/.venv/lib/python3.11/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+  PydanticSerializationUnexpectedValue(Expected 10 fields but got 5: Expected `Message` - serialized value may not be as expected [input_value=Message(content='Hello! H...one, 'reasoning': None}), input_type=Message])
+  PydanticSerializationUnexpectedValue(Expected `StreamingChoices` - serialized value may not be as expected [input_value=Choices(finish_reason='st...finish_reason': 'stop'}), input_type=Choices])
+  return self.__pydantic_serializer__.to_python(
+╭─ 🚀 Crew Execution Star─╮
+│                         │
+│  Crew Execution         │
+│  Started                │
+│  Name:                  │
+│  crew                   │
+│  ID:                    │
+│  b0f72d22-241c-4ac1-a7  │
+│  fb-c80cfd0fbc5f        │
+│                         │
+│                         │
+╰─────────────────────────╯
+
+╭──── 📋 Task Started ────╮
+│                         │
+│  Task Started           │
+│  Name:                  │
+│                  Searc  │
+│  h for the high-impact  │
+│  news articles for the  │
+│  following mandatory    │
+│  logistics sections:    │
+│  ['Global Macro         │
+│  Radar', 'Logistics     │
+│  Tech Lab',             │
+│  'Government &          │
+│  Policy', 'Global Best  │
+│  Practices', 'The       │
+│  Logistics Talent       │
+│  Bench'].               │
+│                  Focus  │
+│  on reliable trade      │
+│  journals, major news   │
+│  outlets, and Indian    │
+│  financial news.        │
+│                  Retur  │
+│  n a raw list of        │
+│  articles grouped by    │
+│  section.               │
+│                         │
+│  ID:                    │
+│  f773f746-b556-439e-80  │
+│  40-82e0e205ac3d        │
+│                         │
+│                         │
+╰─────────────────────────╯
+
+╭─── 🤖 Agent Started ────╮
+│                         │
+│  Agent: Logistics       │
+│  Intelligence           │
+│  Researcher             │
+│                         │
+│  Task:                  │
+│                  Searc  │
+│  h for the high-impact  │
+│  news articles for the  │
+│  following mandatory    │
+│  logistics sections:    │
+│  ['Global Macro         │
+│  Radar', 'Logistics     │
+│  Tech Lab',             │
+│  'Government &          │
+│  Policy', 'Global Best  │
+│  Practices', 'The       │
+│  Logistics Talent       │
+│  Bench'].               │
+│                  Focus  │
+│  on reliable trade      │
+│  journals, major news   │
+│  outlets, and Indian    │
+│  financial news.        │
+│                  Retur  │
+│  n a raw list of        │
+│  articles grouped by    │
+│  section.               │
+│                         │
+│                         │
+╰─────────────────────────╯
+
+[92m11:48:44 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= allenai/molmo-2-8b:free; provider = openrouter
+2026-01-15 11:48:44,931 - LiteLLM - INFO - 
+LiteLLM completion() model= allenai/molmo-2-8b:free; provider = openrouter
+[92m11:48:46 - LiteLLM:INFO[0m: utils.py:1573 - Wrapper: Completed Call, calling success_handler
+2026-01-15 11:48:46,007 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2026-01-15 11:48:46,010 - services.news_fetcher - INFO - Fetching news for topic: Global Macro Radar from https://news.google.com/rss/search?q=Global%20Macro%20Radar&hl=en-US&gl=US&ceid=US:en
+/Users/ravij/AntiGravityProjects/news-curator/.venv/lib/python3.11/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+  PydanticSerializationUnexpectedValue(Expected 10 fields but got 5: Expected `Message` - serialized value may not be as expected [input_value=Message(content='```\nTho...one, 'reasoning': None}), input_type=Message])
+  PydanticSerializationUnexpectedValue(Expected `StreamingChoices` - serialized value may not be as expected [input_value=Choices(finish_reason='st...finish_reason': 'stop'}), input_type=Choices])
+  return self.__pydantic_serializer__.to_python(
+╭─ 🔧 Tool Execution Star─╮
+│                         │
+│  Tool: News Search      │
+│  Tool                   │
+│  Args: {"topic":        │
+│  "Global Macro Radar"}  │
+│                         │
+│                         │
+╰─────────────────────────╯
+
+2026-01-15 11:48:46,875 - services.news_fetcher - INFO - Found 0 articles for Global Macro Radar
+╭────── Tool Output ──────╮
+│                         │
+│  Reference News for     │
+│  topic 'Global Macro    │
+│  Radar':                │
+│                         │
+│                         │
+│                         │
+╰─────────────────────────╯
+
+[92m11:48:46 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= allenai/molmo-2-8b:free; provider = openrouter
+2026-01-15 11:48:46,878 - LiteLLM - INFO - 
+LiteLLM completion() model= allenai/molmo-2-8b:free; provider = openrouter
+[92m11:48:50 - LiteLLM:INFO[0m: utils.py:1573 - Wrapper: Completed Call, calling success_handler
+2026-01-15 11:48:50,359 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2026-01-15 11:48:50,360 - services.news_fetcher - INFO - Fetching news for topic: Logistics Tech Lab from https://news.google.com/rss/search?q=Logistics%20Tech%20Lab&hl=en-US&gl=US&ceid=US:en
+/Users/ravij/AntiGravityProjects/news-curator/.venv/lib/python3.11/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+  PydanticSerializationUnexpectedValue(Expected 10 fields but got 5: Expected `Message` - serialized value may not be as expected [input_value=Message(content='全球...one, 'reasoning': None}), input_type=Message])
+  PydanticSerializationUnexpectedValue(Expected `StreamingChoices` - serialized value may not be as expected [input_value=Choices(finish_reason='st...finish_reason': 'stop'}), input_type=Choices])
+  return self.__pydantic_serializer__.to_python(
+╭─ 🔧 Tool Execution Star─╮
+│                         │
+│  Tool: News Search      │
+│  Tool                   │
+│  Args: {"topic":        │
+│  "Logistics Tech Lab"}  │
+│                         │
+│                         │
+╰─────────────────────────╯
+
+2026-01-15 11:48:51,305 - services.news_fetcher - INFO - Found 0 articles for Logistics Tech Lab
+╭────── Tool Output ──────╮
+│                         │
+│  Reference News for     │
+│  topic 'Logistics Tech  │
+│  Lab':                  │
+│                         │
+│                         │
+│                         │
+╰─────────────────────────╯
+
+[92m11:48:51 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= allenai/molmo-2-8b:free; provider = openrouter
+2026-01-15 11:48:51,309 - LiteLLM - INFO - 
+LiteLLM completion() model= allenai/molmo-2-8b:free; provider = openrouter
+2026-01-15 11:48:51,958 - __main__ - ERROR - Research Phase Failed: litellm.BadRequestError: OpenrouterException - {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"error\":{\"message\":\"Conversation roles must alternate user/assistant/user/assistant/... Conversation roles must alternate user/assistant/user/assistant/...\",\"type\":\"BadRequestError\",\"param\":null,\"code\":400}}","provider_name":"Parasail"}},"user_id":"user_38C7AvPoQHeTW5D6KBSxmr4IPlr"}
+╭───── ❌ LLM Error ──────╮
+│                         │
+│  LLM Call Failed        │
+│  Error:                 │
+│  litellm.BadRequestErr  │
+│  or:                    │
+│  OpenrouterException -  │
+│  {"error":{"message":"  │
+│  Provider returned      │
+│  error","code":400,"me  │
+│  tadata":{"raw":"{\"er  │
+│  ror\":{\"message\":\"  │
+│  Conversation roles     │
+│  must alternate         │
+│  user/assistant/user/a  │
+│  ssistant/...           │
+│  Conversation roles     │
+│  must alternate         │
+│  user/assistant/user/a  │
+│  ssistant/...\",\"type  │
+│  \":\"BadRequestError\  │
+│  ",\"param\":null,\"co  │
+│  de\":400}}","provider  │
+│  _name":"Parasail"}},"  │
+│  user_id":"user_38C7Av  │
+│  PoQHeTW5D6KBSxmr4IPlr  │
+│  "}                     │
+│                         │
+╰─────────────────────────╯
+╭──── 📋 Task Failure ────╮
+│                         │
+│  Task Failed            │
+│  Name:                  │
+│                         │
+│                  Searc  │
+│  h for the high-impact  │
+│  news articles for the  │
+│  following mandatory    │
+│  logistics sections:    │
+│  ['Global Macro         │
+│  Radar', 'Logistics     │
+│  Tech Lab',             │
+│  'Government &          │
+│  Policy', 'Global Best  │
+│  Practices', 'The       │
+│  Logistics Talent       │
+│  Bench'].               │
+│                  Focus  │
+│  on reliable trade      │
+│  journals, major news   │
+│  outlets, and Indian    │
+│  financial news.        │
+│                  Retur  │
+│  n a raw list of        │
+│  articles grouped by    │
+│  section.               │
+│                         │
+│  Agent:                 │
+│  Logistics              │
+│  Intelligence           │
+│  Researcher             │
+│                         │
+│                         │
+╰─────────────────────────╯
+
+
+╭───── Crew Failure ──────╮
+│                         │
+│  Crew Execution Failed  │
+│  Name:                  │
+│  crew                   │
+│  ID:                    │
+│  b0f72d22-241c-4ac1-a7  │
+│  fb-c80cfd0fbc5f        │
+│                         │
+│                         │
+╰─────────────────────────╯
+
+╭──── Tracing Status ─────╮
+│                         │
+│  Info: Tracing is       │
+│  disabled.              │
+│                         │
+│  To enable tracing, do  │
+│  any one of these:      │
+│  • Set tracing=True in  │
+│  your Crew/Flow code    │
+│  • Set                  │
+│  CREWAI_TRACING_ENABLE  │
+│  D=true in your         │
+│  project's .env file    │
+│  • Run: crewai traces   │
+│  enable                 │
+│                         │
+╰─────────────────────────╯

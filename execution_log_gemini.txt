@@ -1,0 +1,17 @@
+2026-01-15 11:56:40,848 - __main__ - INFO - Starting Logistics Intelligence Radar...
+2026-01-15 11:56:40,848 - config.llm_config - INFO - Attempting to connect to OpenAI (gpt-4o)...
+[92m11:56:40 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+2026-01-15 11:56:40,856 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4o; provider = openai
+2026-01-15 11:56:41,597 - openai._base_client - INFO - Retrying request to /chat/completions in 0.488307 seconds
+2026-01-15 11:56:42,885 - openai._base_client - INFO - Retrying request to /chat/completions in 0.760200 seconds
+2026-01-15 11:56:44,037 - config.llm_config - WARNING - Failed to connect to OpenAI: litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+2026-01-15 11:56:44,037 - config.llm_config - INFO - Falling back to OpenRouter (openrouter/allenai/molmo-2-8b:free)...
+[92m11:56:44 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= google/gemini-2.0-flash-exp:free; provider = openrouter
+2026-01-15 11:56:44,041 - LiteLLM - INFO - 
+LiteLLM completion() model= google/gemini-2.0-flash-exp:free; provider = openrouter
+2026-01-15 11:56:46,953 - config.llm_config - ERROR - Failed to connect to OpenRouter: litellm.RateLimitError: RateLimitError: OpenrouterException - {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemini-2.0-flash-exp:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations","provider_name":"Google"}},"user_id":"user_38C7AvPoQHeTW5D6KBSxmr4IPlr"}
+2026-01-15 11:56:46,954 - config.llm_config - CRITICAL - All LLM providers failed. Exiting application.
+Fatal Error: Could not connect to any LLM provider.
