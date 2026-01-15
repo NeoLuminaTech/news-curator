@@ -1556,3 +1556,9 @@ LiteLLM completion() model= mistralai/mistral-7b-instruct:free; provider = openr
 
 2026-01-15 12:08:02,766 - LiteLLM - INFO - 
 LiteLLM completion() model= mistralai/mistral-7b-instruct:free; provider = openrouter
+[92m12:11:07 - LiteLLM:INFO[0m: utils.py:1573 - Wrapper: Completed Call, calling success_handler
+2026-01-15 12:11:07,791 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+/Users/ravij/AntiGravityProjects/news-curator/.venv/lib/python3.11/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+  PydanticSerializationUnexpectedValue(Expected 10 fields but got 5: Expected `Message` - serialized value may not be as expected [input_value=Message(content=' I need ...one, 'reasoning': None}), input_type=Message])
+  PydanticSerializationUnexpectedValue(Expected `StreamingChoices` - serialized value may not be as expected [input_value=Choices(finish_reason='le...nish_reason': 'length'}), input_type=Choices])
+  return self.__pydantic_serializer__.to_python(
