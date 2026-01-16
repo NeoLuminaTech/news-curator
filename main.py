@@ -37,7 +37,7 @@ def main():
     topics_config = load_config('config/topics.yaml')
     recipients_config = load_config('config/recipients.yaml')
 
-    topics = [t['name'] for t in topics_config['topics']]
+    topics = topics_config['topics']
     # We pass the full topics config description/keywords if needed, but the agents handle it.
     
     recipients = recipients_config['recipients']

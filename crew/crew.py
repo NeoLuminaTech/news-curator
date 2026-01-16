@@ -53,9 +53,19 @@ class NewsCuratorCrew:
             fallback_digest = "<h3>OFFLINE MODE - GNEWS FALLBACK</h3><br>"
             
             try:
-                for topic in topics:
-                    fallback_digest += f"<h4>Topic: {topic}</h4><ul>"
-                    articles = fetcher.fetch_news_gnews(topic)
+                for topic_data in topics:
+                    if isinstance(topic_data, dict):
+                        topic_name = topic_data.get('name', 'Unknown')
+                        keywords = topic_data.get('keywords', [])
+                        # Construct a better query using top 3 keywords
+                        search_query = " OR ".join(keywords[:3]) if keywords else topic_name
+                    else:
+                        topic_name = str(topic_data)
+                        search_query = topic_name
+                        
+                    fallback_digest += f"<h4>Topic: {topic_name}</h4><ul>"
+                    # Use the constructed query for fetching
+                    articles = fetcher.fetch_news(search_query, lookback_hours=168)
                     
                     if not articles:
                         fallback_digest += "<li>No recent news found.</li>"

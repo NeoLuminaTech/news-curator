@@ -1,0 +1,1254 @@
+2026-01-15 21:31:26,228 - __main__ - INFO - Starting Logistics Intelligence Radar...
+2026-01-15 21:31:26,229 - config.llm_config - INFO - Attempting to connect to Gemini (gemini/gemini-1.5-flash)...
+[92m21:31:26 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= gemini-1.5-flash; provider = gemini
+2026-01-15 21:31:26,245 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-1.5-flash; provider = gemini
+2026-01-15 21:31:26,793 - config.llm_config - WARNING - Failed to connect to Gemini: litellm.NotFoundError: GeminiException - {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+2026-01-15 21:31:26,793 - config.llm_config - INFO - Falling back to OpenAI (gpt-4o)...
+[92m21:31:26 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+2026-01-15 21:31:26,794 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4o; provider = openai
+2026-01-15 21:31:27,426 - openai._base_client - INFO - Retrying request to /chat/completions in 0.486651 seconds
+2026-01-15 21:31:28,192 - openai._base_client - INFO - Retrying request to /chat/completions in 0.958976 seconds
+2026-01-15 21:31:29,493 - config.llm_config - WARNING - Failed to connect to OpenAI: litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+2026-01-15 21:31:29,493 - config.llm_config - INFO - Falling back to OpenRouter (openrouter/mistralai/mistral-7b-instruct:free)...
+[92m21:31:29 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= mistralai/mistral-7b-instruct:free; provider = openrouter
+2026-01-15 21:31:29,497 - LiteLLM - INFO - 
+LiteLLM completion() model= mistralai/mistral-7b-instruct:free; provider = openrouter
+2026-01-15 21:31:30,095 - config.llm_config - ERROR - Failed to connect to OpenRouter: litellm.RateLimitError: RateLimitError: OpenrouterException - {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1768521600000"},"provider_name":null}},"user_id":"user_38C7AvPoQHeTW5D6KBSxmr4IPlr"}
+2026-01-15 21:31:30,095 - config.llm_config - CRITICAL - All LLM providers failed. Continuing in OFFLINE/FALLBACK mode.
+2026-01-15 21:31:30,102 - __main__ - INFO - Loaded 5 mandatory sections.
+2026-01-15 21:31:30,102 - __main__ - INFO - Starting Phase 1: Global Research & Master Digest...
+╭──────────────────────── 🚀 Crew Execution Started ─────────────────────────╮
+│                                                                            │
+│  Crew Execution Started                                                    │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  909cf800-ba5b-43c9-9a11-3f42dae6f525                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Started ──────────────────────────────╮
+│                                                                            │
+│  Task Started                                                              │
+│  Name:                                                                     │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│  ID: ab07385c-677a-4ffd-aa49-7fa6db960e96                                  │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Logistics Intelligence Researcher                                  │
+│                                                                            │
+│  Task:                                                                     │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:31:30,694 - openai._base_client - INFO - Retrying request to /chat/completions in 0.434583 seconds
+2026-01-15 21:31:31,485 - openai._base_client - INFO - Retrying request to /chat/completions in 0.876313 seconds
+2026-01-15 21:31:32,669 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:31:32,669 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Logistics Intelligence Researcher                                  │
+│                                                                            │
+│  Task:                                                                     │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:31:32,960 - openai._base_client - INFO - Retrying request to /chat/completions in 0.461059 seconds
+2026-01-15 21:31:33,710 - openai._base_client - INFO - Retrying request to /chat/completions in 0.953982 seconds
+2026-01-15 21:31:35,049 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:31:35,049 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Logistics Intelligence Researcher                                  │
+│                                                                            │
+│  Task:                                                                     │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:31:35,376 - openai._base_client - INFO - Retrying request to /chat/completions in 0.432135 seconds
+2026-01-15 21:31:36,098 - openai._base_client - INFO - Retrying request to /chat/completions in 0.920029 seconds
+2026-01-15 21:31:37,314 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:31:37,314 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+2026-01-15 21:31:37,322 - crew.crew - ERROR - LLM Crew Execution Failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Initiating GNews Fallback.
+2026-01-15 21:31:37,322 - services.news_fetcher - INFO - Fetching news for topic: Red Sea shipping OR Suez Canal blockage OR Panama Canal drought from https://news.google.com/rss/search?q=Red%20Sea%20shipping%20OR%20Suez%20Canal%20blockage%20OR%20Panama%20Canal%20drought&hl=en-US&gl=US&ceid=US:en
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Failure ──────────────────────────────╮
+│                                                                            │
+│  Task Failed                                                               │
+│  Name:                                                                     │
+│                                                                            │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│  Agent:                                                                    │
+│  Logistics Intelligence Researcher                                         │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── Crew Failure ───────────────────────────────╮
+│                                                                            │
+│  Crew Execution Failed                                                     │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  909cf800-ba5b-43c9-9a11-3f42dae6f525                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭────────────────────────────── Tracing Status ──────────────────────────────╮
+│                                                                            │
+│  Info: Tracing is disabled.                                                │
+│                                                                            │
+│  To enable tracing, do any one of these:                                   │
+│  • Set tracing=True in your Crew/Flow code                                 │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file             │
+│  • Run: crewai traces enable                                               │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+2026-01-15 21:31:38,542 - services.news_fetcher - INFO - Found 1 unique & valid articles for Red Sea shipping OR Suez Canal blockage OR Panama Canal drought
+2026-01-15 21:31:38,542 - services.news_fetcher - INFO - Fetching news for topic: Warehouse Execution Systems OR AI in Logistics India OR Digital Twins Supply Chain from https://news.google.com/rss/search?q=Warehouse%20Execution%20Systems%20OR%20AI%20in%20Logistics%20India%20OR%20Digital%20Twins%20Supply%20Chain&hl=en-US&gl=US&ceid=US:en
+2026-01-15 21:31:39,373 - services.news_fetcher - INFO - Found 0 unique & valid articles for Warehouse Execution Systems OR AI in Logistics India OR Digital Twins Supply Chain
+2026-01-15 21:31:39,374 - services.news_fetcher - INFO - Fetching news for topic: PM GatiShakti OR Dedicated Freight Corridor status OR National Logistics Policy India from https://news.google.com/rss/search?q=PM%20GatiShakti%20OR%20Dedicated%20Freight%20Corridor%20status%20OR%20National%20Logistics%20Policy%20India&hl=en-US&gl=US&ceid=US:en
+2026-01-15 21:31:40,264 - services.news_fetcher - INFO - Found 0 unique & valid articles for PM GatiShakti OR Dedicated Freight Corridor status OR National Logistics Policy India
+2026-01-15 21:31:40,265 - services.news_fetcher - INFO - Fetching news for topic: Resilient supply chain case study OR Maersk strategy OR DHL innovation from https://news.google.com/rss/search?q=Resilient%20supply%20chain%20case%20study%20OR%20Maersk%20strategy%20OR%20DHL%20innovation&hl=en-US&gl=US&ceid=US:en
+2026-01-15 21:31:41,151 - services.news_fetcher - INFO - Found 0 unique & valid articles for Resilient supply chain case study OR Maersk strategy OR DHL innovation
+2026-01-15 21:31:41,152 - services.news_fetcher - INFO - Fetching news for topic: Logistics workforce shortage India OR Supply chain upskilling OR Blue collar tech jobs India from https://news.google.com/rss/search?q=Logistics%20workforce%20shortage%20India%20OR%20Supply%20chain%20upskilling%20OR%20Blue%20collar%20tech%20jobs%20India&hl=en-US&gl=US&ceid=US:en
+2026-01-15 21:31:42,767 - services.news_fetcher - INFO - Found 1 unique & valid articles for Logistics workforce shortage India OR Supply chain upskilling OR Blue collar tech jobs India
+2026-01-15 21:31:42,768 - __main__ - INFO - Master Digest Analysis Completed.
+2026-01-15 21:31:42,768 - __main__ - INFO - Starting Phase 2: Personalization & Delivery...
+2026-01-15 21:31:42,768 - __main__ - INFO - Processing Brief for: Mr.Ravishankar (CXO)
+╭──────────────────────── 🚀 Crew Execution Started ─────────────────────────╮
+│                                                                            │
+│  Crew Execution Started                                                    │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  0a4926da-eca8-4df6-9e18-ffd92b28a683                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Started ──────────────────────────────╮
+│                                                                            │
+│  Task Started                                                              │
+│  Name:                                                                     │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│  ID: 86c1ec84-4be5-49d1-840e-a85e5e380add                                  │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:31:43,136 - openai._base_client - INFO - Retrying request to /chat/completions in 0.423019 seconds
+2026-01-15 21:31:43,848 - openai._base_client - INFO - Retrying request to /chat/completions in 0.801865 seconds
+2026-01-15 21:31:44,977 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:31:44,978 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:31:45,428 - openai._base_client - INFO - Retrying request to /chat/completions in 0.434332 seconds
+2026-01-15 21:31:46,264 - openai._base_client - INFO - Retrying request to /chat/completions in 0.898232 seconds
+2026-01-15 21:31:47,547 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:31:47,547 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:31:48,169 - openai._base_client - INFO - Retrying request to /chat/completions in 0.438316 seconds
+2026-01-15 21:31:49,332 - openai._base_client - INFO - Retrying request to /chat/completions in 0.893645 seconds
+2026-01-15 21:31:50,605 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:31:50,606 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:31:50,606 - crew.crew - ERROR - Personalization Crew Execution Failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Falling back to Master Digest.
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────────── 📋 Task Failure ──────────────────────────────╮
+│                                                                            │
+│  Task Failed                                                               │
+│  Name:                                                                     │
+│                                                                            │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│  Agent:                                                                    │
+│  Intelligence Delivery Specialist                                          │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+
+╭─────────────────────────────── Crew Failure ───────────────────────────────╮
+│                                                                            │
+│  Crew Execution Failed                                                     │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  0a4926da-eca8-4df6-9e18-ffd92b28a683                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────── Tracing Status ──────────────────────────────╮
+│                                                                            │
+│  Info: Tracing is disabled.                                                │
+│                                                                            │
+│  To enable tracing, do any one of these:                                   │
+│  • Set tracing=True in your Crew/Flow code                                 │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file             │
+│  • Run: crewai traces enable                                               │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+2026-01-15 21:31:54,398 - services.mailer - INFO - Email sent successfully to ravi@neolumina.in
+2026-01-15 21:31:54,398 - __main__ - INFO - Brief sent to ravi@neolumina.in
+2026-01-15 21:31:54,398 - __main__ - INFO - Processing Brief for: Mr.Venkatesh (Head of Operations)
+╭──────────────────────── 🚀 Crew Execution Started ─────────────────────────╮
+│                                                                            │
+│  Crew Execution Started                                                    │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  208d19ac-43f3-4413-b941-d273386266ae                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Started ──────────────────────────────╮
+│                                                                            │
+│  Task Started                                                              │
+│  Name:                                                                     │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│  ID: 6d8e390d-93a7-4e60-b1df-9a78367ce9fe                                  │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:31:55,247 - openai._base_client - INFO - Retrying request to /chat/completions in 0.439745 seconds
+2026-01-15 21:31:56,035 - openai._base_client - INFO - Retrying request to /chat/completions in 0.813979 seconds
+2026-01-15 21:31:57,183 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:31:57,183 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:31:57,490 - openai._base_client - INFO - Retrying request to /chat/completions in 0.382268 seconds
+2026-01-15 21:31:58,171 - openai._base_client - INFO - Retrying request to /chat/completions in 0.990238 seconds
+2026-01-15 21:31:59,443 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:31:59,443 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:31:59,748 - openai._base_client - INFO - Retrying request to /chat/completions in 0.385273 seconds
+2026-01-15 21:32:00,437 - openai._base_client - INFO - Retrying request to /chat/completions in 0.892322 seconds
+2026-01-15 21:32:01,630 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:32:01,631 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:32:01,632 - crew.crew - ERROR - Personalization Crew Execution Failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Falling back to Master Digest.
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────────── 📋 Task Failure ──────────────────────────────╮
+│                                                                            │
+│  Task Failed                                                               │
+│  Name:                                                                     │
+│                                                                            │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li><a                                                      │
+│  href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5'>Suez Canal still 60% quieter as      │
+│  confidence lags - Trans.INFO</a> - Trans.INFO (Mon, 12 Jan 2026 09:55:30  │
+│  GMT)<br><a                                                                │
+│  href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBGeHIzZ0JZVjJKd  │
+│  zEyOEFtZGtmZERKWmJIM19JZDQyMnBZQTNCUDBjMnc5bmpvc25hMDlDelZfRmx6aHRZQlJNW  │
+│  m1wMmR3cWhMMzhfOV83SE95aThtSEE?oc=5" target="_blank">Suez Canal still     │
+│  60% quieter as confidence lags</a>&nbsp;&nbsp;<font                       │
+│  color="#6f6f6f">Trans.INFO</font></li></ul><br><h4>Topic: Logistics Tech  │
+│  Lab</h4><ul><li>No recent news found.</li></ul><br><h4>Topic: Government  │
+│  & Policy</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:        │
+│  Global Best Practices</h4><ul><li>No recent news                          │
+│  found.</li></ul><br><h4>Topic: The Logistics Talent Bench</h4><ul><li><a  │
+│  href='https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5'>India's White-Collar Job Growth Crashes from 11% to 1% as   │
+│  Tech Sector Sheds Roles, Warns Saurabh Mukherjea - scanx.trade</a> -      │
+│  scanx.trade (Sat, 10 Jan 2026 06:36:23 GMT)<br><a                         │
+│  href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxPS1RCSVh2WFctU  │
+│  nN3ckhTcjZrQUZhcGJTdndNWjBGZmk5VTIxN0pVY0FMcm1fcFdFaTJ2YV9MUWdaS0NETnFDa  │
+│  Hk1dWpIZ29VcEpwNEVieXlDb1RSYXpUd0l2WTVicUcwcnFmVXVHSXZuN3AtaWVUV2RqaXAwS  │
+│  nd5OVNPQ0xvRTZqa3RRNHJEbDMwQjF2c19zcWF1c1FXMXU4OE9XWHJZNVBGbFZfeFhYRXNvV  │
+│  zlyMVJIc25tWTFucWl6bkg5ZXRSRzd2U05hY3dyb0Y4TjFXNlN6ZEt0cDZDRlFRVy1BREU1W  │
+│  E84Tmt3?oc=5" target="_blank">India's White-Collar Job Growth Crashes     │
+│  from 11% to 1% as Tech Sector Sheds Roles, Warns Saurabh                  │
+│  Mukherjea</a>&nbsp;&nbsp;<font                                            │
+│  color="#6f6f6f">scanx.trade</font></li></ul><br>                          │
+│  =====================                                                     │
+│  Agent:                                                                    │
+│  Intelligence Delivery Specialist                                          │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── Crew Failure ───────────────────────────────╮
+│                                                                            │
+│  Crew Execution Failed                                                     │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  208d19ac-43f3-4413-b941-d273386266ae                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+
+╭────────────────────────────── Tracing Status ──────────────────────────────╮
+│                                                                            │
+│  Info: Tracing is disabled.                                                │
+│                                                                            │
+│  To enable tracing, do any one of these:                                   │
+│  • Set tracing=True in your Crew/Flow code                                 │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file             │
+│  • Run: crewai traces enable                                               │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+2026-01-15 21:32:05,470 - services.mailer - INFO - Email sent successfully to venkatesh@tirwin.in
+2026-01-15 21:32:05,470 - __main__ - INFO - Brief sent to venkatesh@tirwin.in
+2026-01-15 21:32:05,471 - __main__ - INFO - Logistics Radar Run Completed.

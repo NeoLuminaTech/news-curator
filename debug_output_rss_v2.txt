@@ -1,0 +1,994 @@
+2026-01-15 21:16:17,676 - __main__ - INFO - Starting Logistics Intelligence Radar...
+2026-01-15 21:16:17,676 - config.llm_config - INFO - Attempting to connect to Gemini (gemini/gemini-1.5-flash)...
+[92m21:16:17 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= gemini-1.5-flash; provider = gemini
+2026-01-15 21:16:17,689 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-1.5-flash; provider = gemini
+2026-01-15 21:16:18,043 - config.llm_config - WARNING - Failed to connect to Gemini: litellm.NotFoundError: GeminiException - {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+2026-01-15 21:16:18,043 - config.llm_config - INFO - Falling back to OpenAI (gpt-4o)...
+[92m21:16:18 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+2026-01-15 21:16:18,044 - LiteLLM - INFO - 
+LiteLLM completion() model= gpt-4o; provider = openai
+2026-01-15 21:16:18,596 - openai._base_client - INFO - Retrying request to /chat/completions in 0.417987 seconds
+2026-01-15 21:16:19,316 - openai._base_client - INFO - Retrying request to /chat/completions in 0.856894 seconds
+2026-01-15 21:16:20,599 - config.llm_config - WARNING - Failed to connect to OpenAI: litellm.RateLimitError: RateLimitError: OpenAIException - You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+2026-01-15 21:16:20,600 - config.llm_config - INFO - Falling back to OpenRouter (openrouter/mistralai/mistral-7b-instruct:free)...
+[92m21:16:20 - LiteLLM:INFO[0m: utils.py:3748 - 
+LiteLLM completion() model= mistralai/mistral-7b-instruct:free; provider = openrouter
+2026-01-15 21:16:20,603 - LiteLLM - INFO - 
+LiteLLM completion() model= mistralai/mistral-7b-instruct:free; provider = openrouter
+2026-01-15 21:16:21,236 - config.llm_config - ERROR - Failed to connect to OpenRouter: litellm.RateLimitError: RateLimitError: OpenrouterException - {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1768521600000"},"provider_name":null}},"user_id":"user_38C7AvPoQHeTW5D6KBSxmr4IPlr"}
+2026-01-15 21:16:21,236 - config.llm_config - CRITICAL - All LLM providers failed. Continuing in OFFLINE/FALLBACK mode.
+2026-01-15 21:16:21,242 - __main__ - INFO - Loaded 5 mandatory sections.
+2026-01-15 21:16:21,242 - __main__ - INFO - Starting Phase 1: Global Research & Master Digest...
+╭──────────────────────── 🚀 Crew Execution Started ─────────────────────────╮
+│                                                                            │
+│  Crew Execution Started                                                    │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  2665392e-c6e9-4bc6-ab65-95184ff6c7a7                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Started ──────────────────────────────╮
+│                                                                            │
+│  Task Started                                                              │
+│  Name:                                                                     │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│  ID: 4fb1995f-fadb-44a1-a755-b979794893a5                                  │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Logistics Intelligence Researcher                                  │
+│                                                                            │
+│  Task:                                                                     │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:21,837 - openai._base_client - INFO - Retrying request to /chat/completions in 0.487199 seconds
+2026-01-15 21:16:22,607 - openai._base_client - INFO - Retrying request to /chat/completions in 0.933264 seconds
+2026-01-15 21:16:23,881 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:23,882 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Logistics Intelligence Researcher                                  │
+│                                                                            │
+│  Task:                                                                     │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:24,292 - openai._base_client - INFO - Retrying request to /chat/completions in 0.375572 seconds
+2026-01-15 21:16:25,008 - openai._base_client - INFO - Retrying request to /chat/completions in 0.941970 seconds
+2026-01-15 21:16:26,228 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:26,228 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Logistics Intelligence Researcher                                  │
+│                                                                            │
+│  Task:                                                                     │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:26,516 - openai._base_client - INFO - Retrying request to /chat/completions in 0.464252 seconds
+2026-01-15 21:16:27,370 - openai._base_client - INFO - Retrying request to /chat/completions in 0.831070 seconds
+2026-01-15 21:16:28,593 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:28,594 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────────── 📋 Task Failure ──────────────────────────────╮
+│                                                                            │
+│  Task Failed                                                               │
+│  Name:                                                                     │
+│                                                                            │
+│                  Search for the high-impact news articles for the          │
+│  following mandatory logistics sections: [{'name': 'Global Macro Radar',   │
+│  'description': 'Global events shaping international trade with India      │
+│  impact.', 'keywords': ['Red Sea shipping', 'Suez Canal blockage',         │
+│  'Panama Canal drought', 'EU CBAM', 'India export tariffs', 'Freight       │
+│  rates India', 'Container shortage']}, {'name': 'Logistics Tech Lab',      │
+│  'description': 'Technology trends reshaping logistics operations.',       │
+│  'keywords': ['Warehouse Execution Systems', 'AI in Logistics India',      │
+│  'Digital Twins Supply Chain', 'Last Mile Automation India', 'Drone        │
+│  delivery India']}, {'name': 'Government & Policy', 'description':         │
+│  'Infrastructure, regulation, and policy signals in India.', 'keywords':   │
+│  ['PM GatiShakti', 'Dedicated Freight Corridor status', 'National          │
+│  Logistics Policy India', 'Customs duty changes India', 'ULIP India']},    │
+│  {'name': 'Global Best Practices', 'description': 'What world-class        │
+│  logistics companies are doing differently.', 'keywords': ['Resilient      │
+│  supply chain case study', 'Maersk strategy', 'DHL innovation',            │
+│  'Sustainable logistics practices', 'Just-in-case inventory model']},      │
+│  {'name': 'The Logistics Talent Bench', 'description': 'People, skills,    │
+│  and workforce transformation.', 'keywords': ['Logistics workforce         │
+│  shortage India', 'Supply chain upskilling', 'Blue collar tech jobs        │
+│  India', 'Warehouse management training']}].                               │
+│                  Focus on reliable trade journals, major news outlets,     │
+│  and Indian financial news.                                                │
+│                  Return a raw list of articles grouped by section.         │
+│                                                                            │
+│  Agent:                                                                    │
+│  Logistics Intelligence Researcher                                         │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+2026-01-15 21:16:28,599 - crew.crew - ERROR - LLM Crew Execution Failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Initiating GNews Fallback.
+2026-01-15 21:16:28,600 - services.news_fetcher - INFO - Fetching news for topic: Red Sea shipping OR Suez Canal blockage OR Panama Canal drought from https://news.google.com/rss/search?q=Red%20Sea%20shipping%20OR%20Suez%20Canal%20blockage%20OR%20Panama%20Canal%20drought&hl=en-US&gl=US&ceid=US:en
+
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── Crew Failure ───────────────────────────────╮
+│                                                                            │
+│  Crew Execution Failed                                                     │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  2665392e-c6e9-4bc6-ab65-95184ff6c7a7                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭────────────────────────────── Tracing Status ──────────────────────────────╮
+│                                                                            │
+│  Info: Tracing is disabled.                                                │
+│                                                                            │
+│  To enable tracing, do any one of these:                                   │
+│  • Set tracing=True in your Crew/Flow code                                 │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file             │
+│  • Run: crewai traces enable                                               │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+2026-01-15 21:16:29,418 - services.news_fetcher - INFO - Found 0 unique & valid articles for Red Sea shipping OR Suez Canal blockage OR Panama Canal drought
+2026-01-15 21:16:29,419 - services.news_fetcher - INFO - Fetching news for topic: Warehouse Execution Systems OR AI in Logistics India OR Digital Twins Supply Chain from https://news.google.com/rss/search?q=Warehouse%20Execution%20Systems%20OR%20AI%20in%20Logistics%20India%20OR%20Digital%20Twins%20Supply%20Chain&hl=en-US&gl=US&ceid=US:en
+2026-01-15 21:16:29,976 - services.news_fetcher - INFO - Found 0 unique & valid articles for Warehouse Execution Systems OR AI in Logistics India OR Digital Twins Supply Chain
+2026-01-15 21:16:29,977 - services.news_fetcher - INFO - Fetching news for topic: PM GatiShakti OR Dedicated Freight Corridor status OR National Logistics Policy India from https://news.google.com/rss/search?q=PM%20GatiShakti%20OR%20Dedicated%20Freight%20Corridor%20status%20OR%20National%20Logistics%20Policy%20India&hl=en-US&gl=US&ceid=US:en
+2026-01-15 21:16:30,681 - services.news_fetcher - INFO - Found 0 unique & valid articles for PM GatiShakti OR Dedicated Freight Corridor status OR National Logistics Policy India
+2026-01-15 21:16:30,681 - services.news_fetcher - INFO - Fetching news for topic: Resilient supply chain case study OR Maersk strategy OR DHL innovation from https://news.google.com/rss/search?q=Resilient%20supply%20chain%20case%20study%20OR%20Maersk%20strategy%20OR%20DHL%20innovation&hl=en-US&gl=US&ceid=US:en
+2026-01-15 21:16:31,553 - services.news_fetcher - INFO - Found 0 unique & valid articles for Resilient supply chain case study OR Maersk strategy OR DHL innovation
+2026-01-15 21:16:31,553 - services.news_fetcher - INFO - Fetching news for topic: Logistics workforce shortage India OR Supply chain upskilling OR Blue collar tech jobs India from https://news.google.com/rss/search?q=Logistics%20workforce%20shortage%20India%20OR%20Supply%20chain%20upskilling%20OR%20Blue%20collar%20tech%20jobs%20India&hl=en-US&gl=US&ceid=US:en
+2026-01-15 21:16:32,577 - services.news_fetcher - INFO - Found 0 unique & valid articles for Logistics workforce shortage India OR Supply chain upskilling OR Blue collar tech jobs India
+2026-01-15 21:16:32,577 - __main__ - INFO - Master Digest Analysis Completed.
+2026-01-15 21:16:32,577 - __main__ - INFO - Starting Phase 2: Personalization & Delivery...
+2026-01-15 21:16:32,577 - __main__ - INFO - Processing Brief for: Mr.Ravishankar (CXO)
+╭──────────────────────── 🚀 Crew Execution Started ─────────────────────────╮
+│                                                                            │
+│  Crew Execution Started                                                    │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  263d2cc9-c0eb-407f-9515-48a838977b64                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Started ──────────────────────────────╮
+│                                                                            │
+│  Task Started                                                              │
+│  Name:                                                                     │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│  ID: c57ff2b6-a31a-4e3a-9a41-baaa5d2b00b4                                  │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:32,941 - openai._base_client - INFO - Retrying request to /chat/completions in 0.383637 seconds
+2026-01-15 21:16:33,675 - openai._base_client - INFO - Retrying request to /chat/completions in 0.820758 seconds
+2026-01-15 21:16:35,044 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:35,044 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:35,331 - openai._base_client - INFO - Retrying request to /chat/completions in 0.406748 seconds
+2026-01-15 21:16:36,068 - openai._base_client - INFO - Retrying request to /chat/completions in 0.919034 seconds
+2026-01-15 21:16:37,450 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:37,450 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:37,753 - openai._base_client - INFO - Retrying request to /chat/completions in 0.455763 seconds
+2026-01-15 21:16:38,525 - openai._base_client - INFO - Retrying request to /chat/completions in 0.847949 seconds
+2026-01-15 21:16:39,757 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:39,758 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+[91mAn unknown error occurred. Please check the details below.[0m╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:39,760 - crew.crew - ERROR - Personalization Crew Execution Failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Falling back to Master Digest.
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+
+
+╭───────────────────────────── 📋 Task Failure ──────────────────────────────╮
+│                                                                            │
+│  Task Failed                                                               │
+│  Name:                                                                     │
+│                                                                            │
+│                  You are preparing a update for Mr.Ravishankar, who is a   │
+│  CXO.                                                                      │
+│                  Their interests are: ['Strategic Impact', 'Financial      │
+│  Risk', 'Global Trade Trends'].                                            │
+│                  Their preferred tone is: Strategic.                       │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Ravishankar,".                     │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│  Agent:                                                                    │
+│  Intelligence Delivery Specialist                                          │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── Crew Failure ───────────────────────────────╮
+│                                                                            │
+│  Crew Execution Failed                                                     │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  263d2cc9-c0eb-407f-9515-48a838977b64                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭────────────────────────────── Tracing Status ──────────────────────────────╮
+│                                                                            │
+│  Info: Tracing is disabled.                                                │
+│                                                                            │
+│  To enable tracing, do any one of these:                                   │
+│  • Set tracing=True in your Crew/Flow code                                 │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file             │
+│  • Run: crewai traces enable                                               │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+2026-01-15 21:16:43,021 - services.mailer - INFO - Email sent successfully to ravi@neolumina.in
+2026-01-15 21:16:43,021 - __main__ - INFO - Brief sent to ravi@neolumina.in
+2026-01-15 21:16:43,021 - __main__ - INFO - Processing Brief for: Mr.Venkatesh (Head of Operations)
+╭──────────────────────── 🚀 Crew Execution Started ─────────────────────────╮
+│                                                                            │
+│  Crew Execution Started                                                    │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  c003e3b6-1e23-4506-9ddf-ab58c9b10b50                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 📋 Task Started ──────────────────────────────╮
+│                                                                            │
+│  Task Started                                                              │
+│  Name:                                                                     │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│  ID: 78dffe62-c970-47ea-9043-e67ccc28777a                                  │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:43,395 - openai._base_client - INFO - Retrying request to /chat/completions in 0.480349 seconds
+2026-01-15 21:16:44,259 - openai._base_client - INFO - Retrying request to /chat/completions in 0.919467 seconds
+2026-01-15 21:16:45,459 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:45,459 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:45,748 - openai._base_client - INFO - Retrying request to /chat/completions in 0.495397 seconds
+2026-01-15 21:16:46,526 - openai._base_client - INFO - Retrying request to /chat/completions in 0.877081 seconds
+2026-01-15 21:16:47,684 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:47,684 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── 🤖 Agent Started ─────────────────────────────╮
+│                                                                            │
+│  Agent: Intelligence Delivery Specialist                                   │
+│                                                                            │
+│  Task:                                                                     │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+2026-01-15 21:16:47,995 - openai._base_client - INFO - Retrying request to /chat/completions in 0.448603 seconds
+2026-01-15 21:16:48,765 - openai._base_client - INFO - Retrying request to /chat/completions in 0.869648 seconds
+2026-01-15 21:16:49,957 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:49,957 - root - ERROR - OpenAI API call failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-01-15 21:16:49,957 - crew.crew - ERROR - Personalization Crew Execution Failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Falling back to Master Digest.
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}[0m
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── ❌ LLM Error ───────────────────────────────╮
+│                                                                            │
+│  LLM Call Failed                                                           │
+│  Error: OpenAI API call failed: Error code: 429 - {'error': {'message':    │
+│  'You exceeded your current quota, please check your plan and billing      │
+│  details. For more information on this error, read the docs:               │
+│  https://platform.openai.com/docs/guides/error-codes/api-errors.',         │
+│  'type': 'insufficient_quota', 'param': None, 'code':                      │
+│  'insufficient_quota'}}                                                    │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────── Crew Failure ───────────────────────────────╮
+│                                                                            │
+│  Crew Execution Failed                                                     │
+│  Name:                                                                     │
+│  crew                                                                      │
+│  ID:                                                                       │
+│  c003e3b6-1e23-4506-9ddf-ab58c9b10b50                                      │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────────── 📋 Task Failure ──────────────────────────────╮
+│                                                                            │
+│  Task Failed                                                               │
+│  Name:                                                                     │
+│                                                                            │
+│                  You are preparing a update for Mr.Venkatesh, who is a     │
+│  Head of Operations.                                                       │
+│                  Their interests are: ['Operational Efficiency', 'Cost     │
+│  Reduction', 'Tech Adoption'].                                             │
+│                  Their preferred tone is: Operational.                     │
+│                                                                            │
+│                  Using the Master Digest:                                  │
+│                  1. Start with "Dear Mr.Venkatesh,".                       │
+│                  2. Write a warm, slightly philosophical opening           │
+│  paragraph (approx 50 words) about resilience, strategy, or the current    │
+│  year (2025). Do NOT focus on dry business start immediately. Be human.    │
+│                  3. Follow with EXACTLY this sentence structure: "This     │
+│  edition offers insights on [List the 5 key headlines/topics from the      │
+│  digest], and [Last Topic]."                                               │
+│                  4. Sign off this intro section with "Hope you find this   │
+│  effort worthwhile."                                                       │
+│                  5. Then, append the COMPLETE Master Digest exactly as     │
+│  provided.                                                                 │
+│                  6. CRITICAL: DO NOT REMOVE ANY STORIES.                   │
+│                                                                            │
+│                                                                            │
+│  === MASTER DIGEST ===                                                     │
+│  <h3>OFFLINE MODE - GNEWS FALLBACK</h3><br><h4>Topic: Global Macro         │
+│  Radar</h4><ul><li>No recent news found.</li></ul><br><h4>Topic:           │
+│  Logistics Tech Lab</h4><ul><li>No recent news                             │
+│  found.</li></ul><br><h4>Topic: Government & Policy</h4><ul><li>No recent  │
+│  news found.</li></ul><br><h4>Topic: Global Best Practices</h4><ul><li>No  │
+│  recent news found.</li></ul><br><h4>Topic: The Logistics Talent           │
+│  Bench</h4><ul><li>No recent news found.</li></ul><br>                     │
+│  =====================                                                     │
+│  Agent:                                                                    │
+│  Intelligence Delivery Specialist                                          │
+│                                                                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+
+
+╭────────────────────────────── Tracing Status ──────────────────────────────╮
+│                                                                            │
+│  Info: Tracing is disabled.                                                │
+│                                                                            │
+│  To enable tracing, do any one of these:                                   │
+│  • Set tracing=True in your Crew/Flow code                                 │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file             │
+│  • Run: crewai traces enable                                               │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯
+2026-01-15 21:16:53,182 - services.mailer - INFO - Email sent successfully to venkatesh@tirwin.in
+2026-01-15 21:16:53,182 - __main__ - INFO - Brief sent to venkatesh@tirwin.in
+2026-01-15 21:16:53,182 - __main__ - INFO - Logistics Radar Run Completed.
